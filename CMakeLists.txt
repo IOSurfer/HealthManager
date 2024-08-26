@@ -16,6 +16,7 @@ set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 set(CMAKE_CXX_FLAGS_DEBUG "$ENV{CXXFLAGS} -O0 -Wall -g -ggdb")
 set(CMAKE_CXX_FLAGS_RELEASE "$ENV{CXXFLAGS}  -O3 -Wall")
 
+find_package(SQLite3 REQUIRED)
 find_package(Qt6 REQUIRED COMPONENTS Widgets Core Xml Gui)
 qt_standard_project_setup()
 
@@ -35,7 +36,11 @@ qt_add_executable(${PROJECT_NAME}
                   ${HEALTH_MANAGER_SOURCE_FILE}
 )
 
-target_link_libraries(${PROJECT_NAME} PRIVATE Qt6::Widgets)
+target_link_libraries(${PROJECT_NAME} PRIVATE Qt6::Widgets
+                                              Qt6::Core
+                                              Qt6::Gui
+                                              Qt6::Xml
+                                              SQLite::SQLite3)
 
 if(WIN32)
     set_target_properties(${PROJECT_NAME} PROPERTIES

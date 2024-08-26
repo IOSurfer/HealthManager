@@ -1,0 +1,8 @@
+<RCC>
+    <qresource prefix="/Font">
+    </qresource>
+    <qresource prefix="/Icon">
+    </qresource>
+    <qresource prefix="/Sound">
+    </qresource>
+</RCC>

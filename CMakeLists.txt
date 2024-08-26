@@ -24,9 +24,15 @@ include_directories(${CMAKE_SOURCE_DIR}/Source
                     ${CMAKE_SOURCE_DIR}/Include
                     ${CMAKE_SOURCE_DIR}/Ui)
 
-set(HEALTH_MANAGER_SOURCE_FILE Source/Test/main.cpp)
+set(HEALTH_MANAGER_SOURCE_FILE Source/Test/main.cpp
 
-set(HEALTH_MANAGER_HEADER_FILE )
+                               Source/Database/HmDatabase.cpp
+                               Source/Database/HmBaseTable.cpp)
+
+set(HEALTH_MANAGER_HEADER_FILE Source/Macro/HmDefineMember.h
+
+                               Source/Database/HmDatabase.h
+                               Source/Database/HmBaseTable.h)
 
 set(HEALTH_MANAGER_RESOURCE_FILE )
 
